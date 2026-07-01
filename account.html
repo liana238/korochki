@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кабинет — Корочки.есть</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Корочки.<span>есть</span></a>
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="account.html" class="active">Кабинет</a>
+                <a href="new_request.html">Подать заявку</a>
+                <a href="#" onclick="logout()">Выйти</a>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="account-card">
+            <h1>Личный кабинет</h1>
+            <div id="accountMsg" class="alert" style="display:none;"></div>
+            <div style="font-weight:700;font-size:18px;color:#1a2a3a;margin-bottom:14px;margin-top:20px;">Мои заявки</div>
+            <div id="requestsList"></div>
+            <div class="block" style="margin-top:24px;">
+                <div class="block-title">Оставить отзыв</div>
+                <form id="feedbackForm" onsubmit="return addFeedback(event)">
+                    <div class="form-group">
+                        <label>Выберите курс</label>
+                        <select id="feedbackCourse" required>
+                            <option value="">-- выберите курс --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ваш отзыв</label>
+                        <textarea id="feedbackText" placeholder="Напишите отзыв о качестве образовательных услуг..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить отзыв</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

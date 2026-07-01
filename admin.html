@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админка — Корочки.есть</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Корочки.<span>есть</span></a>
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="admin.html" class="active">Админка</a>
+                <a href="#" onclick="logout()">Выйти</a>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="account-card">
+            <h1>Панель администратора</h1>
+            <p style="color:#6a7a8a;margin-bottom:16px;">Все заявки пользователей</p>
+            <div class="filter-group">
+                <a href="#" class="active" data-filter="all" onclick="filterRequests('all', this)">Все</a>
+                <a href="#" data-filter="Новая" onclick="filterRequests('Новая', this)">Новые</a>
+                <a href="#" data-filter="Идет обучение" onclick="filterRequests('Идет обучение', this)">Идет обучение</a>
+                <a href="#" data-filter="Обучение завершено" onclick="filterRequests('Обучение завершено', this)">Обучение завершено</a>
+            </div>
+            <div id="adminRequestsList"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подать заявку — Корочки.есть</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Корочки.<span>есть</span></a>
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="account.html">Кабинет</a>
+                <a href="new_request.html" class="active">Подать заявку</a>
+                <a href="#" onclick="logout()">Выйти</a>
+            </nav>
+        </div>
+    </header>
+    <main class="main" style="display:flex;justify-content:center;align-items:center;">
+        <div class="card card-wide" style="max-width:500px;">
+            <h1>Подать заявку</h1>
+            <p class="subtitle">Заполните форму для записи на курс</p>
+            <div id="requestMsg" class="alert" style="display:none;"></div>
+            <form id="requestForm" onsubmit="return addRequest(event)">
+                <div class="form-group">
+                    <label>Название курса</label>
+                    <input type="text" id="courseName" placeholder="Введите название курса" required>
+                </div>
+                <div class="form-group">
+                    <label>Дата начала</label>
+                    <input type="date" id="startDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Способ оплаты</label>
+                    <select id="paymentMethod" required>
+                        <option value="наличные">Наличные</option>
+                        <option value="перевод по номеру телефона">Перевод по номеру телефона</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+            </form>
+            <div class="text-center mt-3">
+                <a href="account.html" class="link">← Вернуться в кабинет</a>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
